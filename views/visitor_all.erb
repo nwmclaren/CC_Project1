@@ -1,0 +1,10 @@
+<h2> All Exhibits </h2>
+<div class="container">
+<% for exhibit in @exhibits%>
+<div class="exhibit">
+<p>Exhibit Name: <%=exhibit.exhibit_name %>
+<p>Category: <%=exhibit.category %></p>
+<hr>
+</div>
+<% end %>
+</div>

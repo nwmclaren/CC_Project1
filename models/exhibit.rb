@@ -12,9 +12,10 @@ def initialize(options)
 end
 
 def save()
-  sql = 'INSERT INTO exhibits (exhibit_name, category, artist_id) VALUES ($1, $2,$3)'
+  sql = 'INSERT INTO exhibits (exhibit_name, category, artist_id) VALUES ($1, $2,$3) RETURNING id'
   values = [@exhibit_name,@category,@artist_id]
-  SqlRunner.run(sql,values)
+  result = SqlRunner.run(sql,values)
+  @id = result.first()['id'].to_i
 end
 
 def self.find_all()
@@ -28,6 +29,13 @@ def self.find_by_id(id)
   values = [id]
   result = SqlRunner.run(sql,values)
   return Exhibit.new(result[0])
+end
+
+def delete()
+    sql = 'DELETE FROM exhibits
+    WHERE id = $1'
+    values = [@id]
+    SqlRunner.run( sql, values )
 end
 
 def self.delete_all()

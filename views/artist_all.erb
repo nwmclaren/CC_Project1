@@ -1,0 +1,18 @@
+<h2> All Artists </h2>
+<div class="container">
+<hr
+<% for artist in @artists%>
+<div class="artist">
+<p>First Name: <%=artist.first_name %>
+<p>Last Name: <%=artist.last_name %></p>
+<p><a href="/gallery/manager/artists/<%= artist.id %>/edit">Edit Artist</a></p>
+<form method="post" action="/gallery/manager/artists/<%= artist.id %>/delete">
+  <input type="submit" value="Delete Artist"/>
+</form>
+<hr
+</div>
+<% end %>
+<li>
+    <a href="/gallery/manager/artists/new">Add Artist</a>
+</li>
+</div>

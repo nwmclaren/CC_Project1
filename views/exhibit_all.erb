@@ -1,0 +1,18 @@
+<h2> All Exhibits </h2>
+<div class="container">
+<hr
+<% for exhibit in @exhibits%>
+<div class="artist">
+<p>Exhibit Name: <%=exhibit.exhibit_name %>
+<p>Category: <%=exhibit.category %></p>
+<p><a href="/gallery/manager/exhibits/<%= exhibit.id %>/edit">Edit Exhibit</a></p>
+<form method="post" action="/gallery/manager/exhibits/<%= exhibit.id %>/delete">
+  <input type="submit" value="Delete Exhibit"/>
+</form>
+<hr
+</div>
+<% end %>
+<li>
+    <a href="/gallery/manager/exhibits/new">Add Exhibit</a>
+</li>
+</div>

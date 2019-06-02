@@ -42,7 +42,7 @@ end
 post '/gallery/manager/exhibits/add' do
   @exhibit = Exhibit.new( params )
   @exhibit.save()
-  erb( :artist_saved )
+  erb( :exhibit_saved )
 end
 
 get '/gallery/manager/exhibits/new' do
@@ -55,3 +55,33 @@ post '/gallery/manager/exhibits/:id/delete' do
   exhibit.delete()
   redirect to '/gallery/manager/exhibits'
 end
+
+get '/gallery/manager/exhibits/:id/edit' do
+  @artists = Artist.find_all()
+  @exhibit = Exhibit.find_by_id( params[:id] )
+  erb( :exhibit_edit )
+end
+
+post '/gallery/manager/exhibits/assign' do
+  @exhibit = Exhibit.new( params )
+  @exhibit.save()
+  erb( :exhibit_assigned )
+end
+
+post '/gallery/manager/exhibits/:id' do
+  exhibit = Exhibit.new(params)
+  exhibit.update()
+  erb( :exhibit_updated )
+end
+
+get '/gallery/manager/assign' do
+  @artists = Artist.find_all()
+#  @exhibits = Exhibit.find_all()
+  erb( :assign_exhibit )
+end
+
+# post '/gallery/manager/exhibits/assign' do
+#   @exhibit = Exhibit.new( params )
+#   @exhibit.save()
+#   erb( :exhibit_assigned )
+# end

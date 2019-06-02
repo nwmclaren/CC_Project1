@@ -49,4 +49,11 @@ def self.delete_by_id(id)
   SqlRunner.run(sql,values)
 end
 
+def update()
+  sql = 'UPDATE exhibits SET (exhibit_name, category, artist_id)
+   = ($1, $2, $3) WHERE id = $4'
+  values = [@exhibit_name, @category, @artist_id, @id]
+  SqlRunner.run(sql,values)
+end
+
 end

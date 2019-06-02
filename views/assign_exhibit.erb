@@ -1,0 +1,26 @@
+<form method="post" action="/gallery/manager/exhibits/assign">
+
+<label for "artist-select">Select Artist</label>
+  <select id="artist-select" name="artist_id" type="text">
+    <% for artist in @artists %>
+    <option value="<%= artist.id%>">
+      <%= artist.last_name%></option>
+      <% end %>
+    </select>
+
+    <label for="exhibit-name-field">Exhibit Name:</label>
+    <input
+    type="text"
+    name="exhibit_name"
+    id="exhibit-name-field"
+    />
+
+    <label for="category-field">Category:</label>
+    <input
+    type="text"
+    name="category"
+    id="category-field"
+    />
+    
+      <input type='submit' value="Assign Exhibit">
+    </form>

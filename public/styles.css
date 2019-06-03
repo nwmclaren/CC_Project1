@@ -1,0 +1,74 @@
+body {
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  color: white;
+  background-image: url("https://images.pexels.com/photos/102127/pexels-photo-102127.jpeg?cs=srgb&dl=art-artist-brush-102127.jpg&fm=jpg");
+  background-size: cover;
+}
+
+nav {
+  background: lightblue;
+  width: 100vw;
+  height: 10vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+li {
+  list-style: none;
+  margin: 0 10px;
+  font-size:25px;
+}
+
+
+
+/* header {
+  margin-top: 1em;
+}
+
+img {
+  width : 5em;
+}
+
+nav {
+  text-align: left;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 25em;
+  margin: auto;
+}
+
+label {
+  margin-top: 1em;
+}
+
+a {
+  color: red;
+}
+
+.container {
+  display : flex;
+  flex-wrap: wrap;
+}
+
+.student {
+  display: flex;
+  flex-direction: column;
+  width: 15em;
+  margin: 1em;
+  border-color: black;
+  border-style: solid;
+  border-radius: 1em;
+  align-items: center;
+  padding: 1em;
+}
+
+.submit {
+  margin: auto;
+  margin-top: 2em;
+} */

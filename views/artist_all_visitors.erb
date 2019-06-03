@@ -1,0 +1,14 @@
+<h2> All Artists </h2>
+<div class="container">
+<hr
+<% for artist in @artists%>
+<div class="artist">
+<p>First Name: <%=artist.first_name %>
+<p>Last Name: <%=artist.last_name %></p>
+<form method="get" action="/gallery/visitors/artists/<%= artist.id %>/exhibit">
+  <input type="submit" value="View Exhibits"/>
+</form>
+<hr
+</div>
+<% end %>
+</div>

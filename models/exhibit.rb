@@ -21,8 +21,7 @@ end
 def self.find_all()
   sql = "SELECT * FROM exhibits"
   result = SqlRunner.run( sql )
-    return result.map{|details| Exhibit.new(details)}r
-
+  return result.map{|details| Exhibit.new(details)}
 end
 
 def self.find_by_id(id)

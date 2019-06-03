@@ -21,7 +21,8 @@ end
 def self.find_all()
   sql = "SELECT * FROM exhibits"
   result = SqlRunner.run( sql )
-  return result.map{|details| Exhibit.new(details)}
+    return result.map{|details| Exhibit.new(details)}r
+
 end
 
 def self.find_by_id(id)
@@ -29,6 +30,13 @@ def self.find_by_id(id)
   values = [id]
   result = SqlRunner.run(sql,values)
   return Exhibit.new(result[0])
+end
+
+def self.filter_by_artist(id)
+  sql = 'SELECT * FROM exhibits WHERE artist_id = $1'
+  values = [id]
+  result = SqlRunner.run(sql,values)
+  return result.map{|details| Exhibit.new(details)}
 end
 
 def delete()

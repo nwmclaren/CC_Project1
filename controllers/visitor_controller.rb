@@ -12,3 +12,8 @@ get '/gallery/vistors/all/' do
   @exhibits = Exhibit.find_all()
   erb( :visitor_all )
 end
+
+get '/gallery/visitor/exhibits/:id/more' do
+  @exhibit = Exhibit.find_by_id( params[:id] )
+  erb( :exhibit_show )
+end

@@ -8,21 +8,16 @@
 </head>
 <body>
   <header>
-    <h1>Art Gallery</h1>
+    <h1>New World Art Gallery</h1>
   </header>
-  <nav>
-    <ul>
-      <li>
-        <a href='/gallery/'>Home</a>
-      </li>
-      <li>
-        <a href='/gallery/managers/'>Managers</a>
-      </li>
-      <li>
-        <a href='/gallery/visitors/'>Visitors</a>
-      </li>
-    </ul>
-  </nav>
+
+  <div class="navbar">
+  <a class="active" href='/gallery/'>Home</a></a>
+  <a href='/gallery/managers/'>Managers</a>
+  <a href='/gallery/visitors/'>Visitors</a>
+  <a href=/gallery/about>About</a>
+</div>
+
   <%= yield %>
 </body>
 </html>

@@ -2,18 +2,19 @@ require_relative('../db/sql_runner')
 
 class Exhibit
 
-attr_accessor :id, :exhibit_name, :category, :artist_id
+attr_accessor :id, :exhibit_name, :category, :artist_id, :image
 
 def initialize(options)
   @id = options['id'].to_i() if options['id']
   @exhibit_name = options['exhibit_name']
   @category = options['category']
   @artist_id = options['artist_id'].to_i()
+  @image = options['image']
 end
 
 def save()
-  sql = 'INSERT INTO exhibits (exhibit_name, category, artist_id) VALUES ($1, $2,$3) RETURNING id'
-  values = [@exhibit_name,@category,@artist_id]
+  sql = 'INSERT INTO exhibits (exhibit_name, category, artist_id, image) VALUES ($1, $2,$3,$4) RETURNING id'
+  values = [@exhibit_name,@category,@artist_id,@image]
   result = SqlRunner.run(sql,values)
   @id = result.first()['id'].to_i
 end
@@ -57,9 +58,9 @@ def self.delete_by_id(id)
 end
 
 def update()
-  sql = 'UPDATE exhibits SET (exhibit_name, category, artist_id)
-   = ($1, $2, $3) WHERE id = $4'
-  values = [@exhibit_name, @category, @artist_id, @id]
+  sql = 'UPDATE exhibits SET (exhibit_name, category, artist_id, image)
+   = ($1, $2, $3, $4) WHERE id = $5'
+  values = [@exhibit_name, @category, @artist_id, @image, @id]
   SqlRunner.run(sql,values)
 end
 

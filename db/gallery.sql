@@ -11,5 +11,6 @@ CREATE TABLE exhibits(
   id SERIAL4 PRIMARY KEY,
   exhibit_name VARCHAR(255),
   category VARCHAR(255),
-  artist_id INT4 REFERENCES artists(id) ON DELETE CASCADE
+  artist_id INT4 REFERENCES artists(id) ON DELETE CASCADE,
+  image TEXT
 );

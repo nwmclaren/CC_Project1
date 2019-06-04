@@ -1,3 +1,8 @@
+<h1>Add New Exhibit</h1>
+
+<br>
+
+
 <form method="post" action="/gallery/manager/exhibits/add">
   <label for="exhibit-name-field">Exhibit Name:</label>
   <input
@@ -21,6 +26,12 @@
         <% end %>
       </select>
 
+  <label for "image-field">Insert Image Path/URL</label>
+    <input
+    type="text"
+    name="image"
+    id="image-field"
+  />
 
   <input type="submit" value="Add Exhibit">
 </form>

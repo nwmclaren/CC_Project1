@@ -1,6 +1,6 @@
-<br>
-<br>
+<h1>Edit Exbhibit</h1>
 
+<br>
 
 
 <form method="post" action="/gallery/manager/exhibits/<%= @exhibit.id %>">
@@ -27,6 +27,14 @@
         <%= artist.last_name%></option>
         <% end %>
       </select>
+
+  <label for "image-field">Insert Image Path/URL</label>
+      <input
+      type="text"
+      name="image"
+      id="image-field"
+      value="<%= @exhibit.image %>"
+  />
 
   <input type='submit' value="Update Exhibit">
 </form>

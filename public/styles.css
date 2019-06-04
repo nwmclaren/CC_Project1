@@ -21,6 +21,11 @@ body {
   border-width: thin;
 }
 
+img {
+  border-style: solid;
+  border-color: black;
+}
+
 li {
   list-style: none;
   margin: auto;

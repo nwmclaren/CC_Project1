@@ -25,6 +25,13 @@ def self.find_all()
   return result.map{|details| Exhibit.new(details)}
 end
 
+def self.find_all_categories()
+  sql = "SELECT category FROM exhibits
+        GROUP BY category"
+  result = SqlRunner.run( sql )
+  return result.map{|details| Exhibit.new(details)}
+end
+
 def self.find_by_id(id)
   sql = 'SELECT * FROM exhibits WHERE id = $1'
   values = [id]
@@ -35,6 +42,21 @@ end
 def self.filter_by_artist(id)
   sql = 'SELECT * FROM exhibits WHERE artist_id = $1'
   values = [id]
+  result = SqlRunner.run(sql,values)
+  return result.map{|details| Exhibit.new(details)}
+end
+
+def self.filter_by_category(category)
+  sql = 'SELECT * FROM exhibits WHERE category = $1'
+  values = [category]
+  result = SqlRunner.run(sql,values)
+  return result.map{|details| Exhibit.new(details)}
+end
+
+def self.filter_by_category_grouped(category)
+  sql = 'SELECT * FROM exhibits WHERE category = $1
+          GROUP BY category'
+  values = [category]
   result = SqlRunner.run(sql,values)
   return result.map{|details| Exhibit.new(details)}
 end

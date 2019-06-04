@@ -1,0 +1,20 @@
+<div class="back">
+
+<a href='/gallery/vistors/all/categories'>back</a>
+
+</div>
+
+<h2> All Exhibits by Category</h2>
+
+<div class="container">
+<hr
+<% for exhibit in @exhibits%>
+<div class="exhibit">
+<p>Exhibit Name: <%=exhibit.exhibit_name %>
+<p>Category: <%=exhibit.category %></p>
+
+<hr
+</div>
+<% end %>
+
+</div>

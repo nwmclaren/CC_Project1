@@ -1,0 +1,22 @@
+<div class="back">
+
+<a href='/gallery/visitors/'>back</a>
+
+</div>
+
+
+<h2> All Categories Featured at New World Art Gallery</h2>
+<div class="container">
+<hr
+<% for category in @categories%>
+<div class="category">
+<p><%=category.category %>
+
+<form method="get" action="/gallery/visitors/categories/<%= category.category %>/exhibit">
+  <input type="submit" value="View Exhibits"/>
+</form>
+
+<hr
+</div>
+<% end %>
+</div>
